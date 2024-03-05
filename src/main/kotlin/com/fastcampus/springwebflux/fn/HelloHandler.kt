@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono
 @Component
 class HelloHandler {
 
-    fun sayHello(req: ServerRequest): Mono<ServerResponse> {
-        return ServerResponse.ok().bodyValue("Hello WebFlux")
+    fun sayHello(req: ServerRequest) : Mono<ServerResponse> {
+        return ServerResponse.ok().bodyValue("Hello WebFlux!")
     }
 }

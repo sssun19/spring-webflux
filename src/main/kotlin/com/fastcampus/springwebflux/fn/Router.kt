@@ -11,19 +11,9 @@ import org.springframework.web.reactive.function.server.router
 class Router {
 
     @Bean
-    fun helloRouter(handler: HelloHandler): RouterFunction<ServerResponse> =
+    fun helloRouter(handler: HelloHandler) : RouterFunction<ServerResponse> =
         route()
             .GET("/", handler::sayHello)
             .build()
-
-
-    @Bean
-    fun userRouter(handler: UserHandler): RouterFunction<ServerResponse> =
-        router {
-            "/users".nest {
-                GET("/users/{id}", handler::getUser)
-                GET("/users", handler::getAll)
-            }
-        }
 
 }
